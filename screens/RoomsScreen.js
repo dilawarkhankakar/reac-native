@@ -14,6 +14,7 @@ function RoomsScreen({ navigation }) {
     }
     fetchedRooms();
   }, []);
+
   function renderCategoryItem(itemData) {
     const handleRoomSelection = () => {
       navigation.navigate("RoomDetails", { roomId: itemData.item.id });
@@ -22,6 +23,7 @@ function RoomsScreen({ navigation }) {
       <RoomGridTile title={itemData.item.id} onPress={handleRoomSelection} />
     );
   }
+
   return !rooms ? (
     <LoadingOverlay />
   ) : (
